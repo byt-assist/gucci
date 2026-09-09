@@ -45,7 +45,7 @@
         .wallet-btn { background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 8px 20px; border-radius: 30px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .wallet-btn:hover { background: #D4AF37; color: #0A0A0A; }
         
-        /* ===== HERO ===== */
+        /* ===== HERO (видео 1) ===== */
         .hero {
             height: 100vh;
             display: flex;
@@ -68,15 +68,6 @@
             object-fit: cover;
             z-index: 0;
         }
-        .hero-image-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
         .hero::after {
             content: '';
             position: absolute;
@@ -84,7 +75,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
         .hero-content {
@@ -134,15 +125,47 @@
         .stat-value { font-family: 'Playfair Display', serif; font-size: 28px; color: #D4AF37; letter-spacing: 1px; }
         .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; margin-top: 4px; }
         
-        /* ===== ABOUT ===== */
-        .about { padding: 100px 0; background: #0A0A0A; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        /* ===== ABOUT (видео 2 - фон) ===== */
+        .about {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: #0A0A0A;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .about-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .about-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .about .container {
+            position: relative;
+            z-index: 2;
+        }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .about-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; }
+        .about-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; border: 2px solid rgba(212, 175, 55, 0.2); }
         .about-text h2 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
         .about-text h2 span { color: #D4AF37; }
-        .about-text p { font-size: 16px; opacity: 0.7; margin-bottom: 30px; line-height: 1.8; }
+        .about-text p { font-size: 16px; opacity: 0.8; margin-bottom: 30px; line-height: 1.8; }
         .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .feature { background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 4px; text-align: center; border-bottom: 2px solid #D4AF37; }
+        .feature { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 4px; text-align: center; border-bottom: 2px solid #D4AF37; backdrop-filter: blur(5px); }
         .feature-icon { font-size: 28px; margin-bottom: 8px; }
         .feature-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
@@ -159,10 +182,49 @@
         .brand-name { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
         .brand-price { font-size: 11px; color: #D4AF37; margin-top: 4px; font-weight: 600; }
         
-        /* ===== COLLECTION ===== */
-        .collection { padding: 100px 0; background: #0A0A0A; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        /* ===== COLLECTION (видео 3 - фон) ===== */
+        .collection {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: #0A0A0A;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .collection-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .collection-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .collection .container {
+            position: relative;
+            z-index: 2;
+        }
         .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .collection-card { position: relative; overflow: hidden; border-radius: 4px; }
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
         .collection-card img { width: 100%; height: 400px; object-fit: cover; transition: all 0.5s ease; }
         .collection-card:hover img { transform: scale(1.02); }
         .collection-card .overlay {
@@ -171,7 +233,7 @@
             left: 0;
             right: 0;
             padding: 30px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: #FFFFFF;
         }
         .collection-card .overlay h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; letter-spacing: 1px; }
@@ -289,14 +351,14 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO (видео 1) -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="video-gucci-hero.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <div class="hero-badge" data-i18n="hero_badge">⚡ Generalized Unified Cross-Chain Interface</div>
-            <h1 class="hero-title">GUCCI <span>AI</span></h1>
+            <h1 class="hero-title">GUCCI <span>.</span></h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Unify Cross-Chain Operations — Stake for Rewards</p>
             <div class="hero-stats">
                 <div class="stat">
@@ -319,8 +381,14 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT (видео 2 - фон) -->
     <section class="about" id="about">
+        <div class="about-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="video-gucci-style.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="about-overlay"></div>
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
@@ -358,8 +426,14 @@
         </div>
     </section>
 
-    <!-- COLLECTION -->
+    <!-- COLLECTION (видео 3 - фон) -->
     <section class="collection" id="collection">
+        <div class="collection-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="video-gucci-collection.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="collection-overlay"></div>
         <div class="container">
             <div class="section-header">
                 <h2 data-i18n="collection_title">GUCCI <span>Collection</span></h2>
@@ -424,7 +498,7 @@
         </div>
     </section>
 
-    <!-- LIQUIDITY POOLS -->
+    <!-- LIQUIDITY -->
     <section class="liquidity-section" id="liquidity">
         <div class="container">
             <div class="section-header">
@@ -443,7 +517,7 @@
         </div>
     </section>
 
-    <!-- CONTRACT ADDRESS -->
+    <!-- CONTRACT -->
     <section class="contract-section">
         <div class="container">
             <div class="contract-box">
